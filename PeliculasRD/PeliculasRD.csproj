@@ -5,8 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\Css\NewFolder1\**" />
+    <Compile Remove="wwwroot\Css\NewFolder\**" />
+    <Content Remove="wwwroot\Css\NewFolder1\**" />
+    <Content Remove="wwwroot\Css\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\Css\NewFolder1\**" />
+    <EmbeddedResource Remove="wwwroot\Css\NewFolder\**" />
+    <None Remove="wwwroot\Css\NewFolder1\**" />
+    <None Remove="wwwroot\Css\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="wwwroot\Css\Home\" />
+    <Folder Include="wwwroot\Img\" />
   </ItemGroup>
 
   <ItemGroup>

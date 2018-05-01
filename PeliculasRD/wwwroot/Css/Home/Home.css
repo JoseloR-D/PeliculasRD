@@ -1,0 +1,30 @@
+﻿.main {
+    width: 80%;
+    background: blue;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 3px;
+    padding: 20px;
+    font-family: 'Kavivanar', cursive;
+    font-size: 28px;
+}
+
+.peliculas {
+    display: flex;
+}
+
+.pelicula {
+    width: 20%;
+}
+
+img {
+    width: 75%;
+}
+
+.nombrePelicula {
+    width: 75%;
+    background: #000;
+    color: #fff;
+    text-align:center;
+    margin-top: -13px;
+}

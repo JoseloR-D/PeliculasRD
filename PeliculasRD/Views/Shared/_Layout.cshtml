@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Css/StyleSheet.css" rel="stylesheet">
+    <link href="~/Css/Home/Home.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
 </head>
 <body>
     <div>
-        @RenderBody()
+        <header>
+            <h1>Peliculas RD</h1>
+        </header>
+
+        <div class="main">
+            @RenderBody()
+        </div>
+
+        <footer><h3>Made by Manuel Guerrero</h3></footer>
     </div>
 </body>
 </html>
