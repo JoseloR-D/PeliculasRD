@@ -1,0 +1,37 @@
+﻿@model AppUser
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Edit";
+}
+
+@if(Model == null)
+{
+    <p>User Not Found</p>
+
+} else
+{
+
+
+<form method="post" asp-action="Edit">
+    <h3 class="createUserH3">Edit User: @Model.UserName</h3>
+    <div class="validationDanger" asp-validation-summary="All"></div>
+    <div class="create">
+        <div>
+            <label asp-for="Id"></label>
+            <input asp-for="Id" disabled />
+        </div>
+        <div>
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+        </div>
+        <div>
+            <label name="Password">Password</label>
+            <input name="Password" />
+        </div>
+    </div>
+
+    <button type="submit" class="submitButtom">Edit</button>
+    <a asp-action="Index" class="cancelButtom">Cancel</a>
+</form>
+}

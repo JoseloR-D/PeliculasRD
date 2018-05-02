@@ -11,10 +11,12 @@ namespace PeliculasRD.Controllers
     public class AdminController : Controller
     {
         UserManager<AppUser> userManager;
+        IPasswordHasher<AppUser> passwordHasher;
 
-        public AdminController(UserManager<AppUser> userMgr)
+        public AdminController(UserManager<AppUser> userMgr, IPasswordHasher<AppUser> passHash)
         {
             userManager = userMgr;
+            passwordHasher = passHash;
         }
 
         public ViewResult Index() => View(userManager.Users);
@@ -65,6 +67,39 @@ namespace PeliculasRD.Controllers
             }
             //Despues de guardar los errores ponmelos en la vista
             return View("Index", userManager.Users);
+        }
+
+        public async Task<IActionResult> Edit(string id)
+        {
+            AppUser user = await userManager.FindByIdAsync(id);
+
+            if (user != null)
+                return View(user);
+            else
+                return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(string id, string email, string password)
+        {
+            AppUser user = await userManager.FindByIdAsync(id);
+            
+            if(user != null)
+            {
+                user.Email = email;
+                user.PasswordHash = passwordHasher.HashPassword(user, password);
+
+                IdentityResult result = await userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                    return RedirectToAction("Index");
+                else
+                    AddErrorsFromResult(result);
+            } else
+            {
+                ModelState.AddModelError("", "User Not Found");
+            }
+            return View(user);
         }
 
         private void AddErrorsFromResult(IdentityResult result)
