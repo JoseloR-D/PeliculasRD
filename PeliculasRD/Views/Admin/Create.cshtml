@@ -1,0 +1,29 @@
+﻿@model CreateUser
+
+@{ 
+    Layout = "_Layout";
+    ViewBag.Title = "Create User";
+}
+
+
+<form method="post" action="Create">
+    <h3 class="createUserH3">Create an User</h3>
+    <div class="validationDanger" asp-validation-summary="All"></div>
+    <div class="create">
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" />
+        </div>
+        <div>
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" />
+        </div>
+    </div>
+
+    <button type="submit" class="submitButtom">Submit</button>
+    <a asp-action="Index" class="cancelButtom">Cancel</a>
+</form>

@@ -1,6 +1,6 @@
 ﻿.main {
     width: 80%;
-    background: blue;
+    background: #E2EFDE;
     padding: 20px;
     margin: 20px auto;
     border-radius: 3px;
@@ -11,6 +11,8 @@
 
 .peliculas {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .pelicula {

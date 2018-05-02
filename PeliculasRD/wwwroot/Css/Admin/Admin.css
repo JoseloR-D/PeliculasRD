@@ -1,0 +1,55 @@
+﻿.admin h4 {
+    text-align: center;
+}
+
+form .create {
+    width: 20%;
+    margin-bottom: 15px;
+}
+
+form .createUserH3 {
+    text-align: center;
+    font-weight: 900;
+}
+
+form .create input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-family: 'Kavivanar', cursive;
+    font-size: 15px;
+}
+
+.options {
+    display: flex;
+    padding: 0;
+}
+
+.options a {
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+table, th, td {
+    padding: 5px 15px;
+    border: 1px solid rgba(0,0,0, .2);
+}
+
+tr:hover {
+    background: #23395B;
+    color: #fff;
+}
+
+.infoUsers{
+    display: flex;
+    flex-wrap: wrap;
+}
