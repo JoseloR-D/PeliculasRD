@@ -1,0 +1,28 @@
+﻿@model LoginModel
+
+@{ 
+    Layout = "_Layout";
+    ViewBag.Title = "Log In";
+}
+
+<form method="post" asp-action="Login">
+    <h3 class="createUserH3">Log In</h3>
+    <div class="validationDanger" asp-validation-summary="All"></div>
+    <div class="create">
+        <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+        <div>
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" />
+        </div>
+    </div>
+
+    <button type="submit" class="submitButtom">Log In</button>
+    <a asp-controller="Home" asp-action="Index" class="cancelButtom">Cancel</a>
+</form>
+
+
+

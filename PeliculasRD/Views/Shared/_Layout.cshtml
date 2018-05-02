@@ -14,7 +14,13 @@
     <div>
         <header>
             <h1>Peliculas RD</h1>
-            <a href="#"><i class="fas fa-user"><p> Log in</p></i></a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-action="Login" asp-controller="Account"><i class="fas fa-user"><p>Out</p></i></a>
+            } else
+            {
+                <a asp-action="Login" asp-controller="Account"><i class="fas fa-user"><p> Log in</p></i></a>
+            }
         </header>
 
         <div class="main">

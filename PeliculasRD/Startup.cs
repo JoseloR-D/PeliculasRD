@@ -26,6 +26,7 @@ namespace PeliculasRD
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //Pasandole al parametro options del AppIdentityDbContext
             services.AddDbContext<AppIdentityDbContext>(opts => {
                 opts.UseSqlServer(Configuration["Data:PeliculasRD:ConnectionString"]);
             });

@@ -53,3 +53,7 @@ tr:hover {
     display: flex;
     flex-wrap: wrap;
 }
+
+.disableDanger{
+    background: #fff;
+}

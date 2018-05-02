@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PeliculasRD.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PeliculasRD.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         UserManager<AppUser> userManager;
