@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PeliculasRD.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admins")]
     public class RoleAdminController : Controller
     {
         RoleManager<IdentityRole> roleManager;

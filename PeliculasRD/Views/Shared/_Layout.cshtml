@@ -16,7 +16,7 @@
             <h1>Peliculas RD</h1>
             @if (User.Identity.IsAuthenticated)
             {
-                <a asp-action="Login" asp-controller="Account"><i class="fas fa-user"><p>Out</p></i></a>
+                <a asp-action="Logout" asp-controller="Account"><i class="fas fa-user"><p>Out</p></i></a>
             } else
             {
                 <a asp-action="Login" asp-controller="Account"><i class="fas fa-user"><p> Log in</p></i></a>
