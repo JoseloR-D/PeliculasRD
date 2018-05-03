@@ -79,6 +79,22 @@ form .validationDanger {
     color: #9B1D20;
 }
 
+.createButtom {
+    text-decoration: none;
+    background: #2978A0;
+    padding: 10px;
+    font-family: 'Kavivanar', cursive;
+    font-size: 25px;
+    border: none;
+    border-radius: 3px;
+    width: 100px;
+    color: #000;
+}
+
+.createButtom:hover {
+    opacity: .8;
+    cursor: pointer;
+}
                             /*Footer*/
 footer {
     background: #23395B;
