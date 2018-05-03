@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PeliculasRD.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admins")]
     public class AdminController : Controller
     {
         UserManager<AppUser> userManager;

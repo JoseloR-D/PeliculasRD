@@ -20,6 +20,7 @@ namespace PeliculasRD
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseDefaultServiceProvider(opts => opts.ValidateScopes = false)
                 .Build();
     }
 }

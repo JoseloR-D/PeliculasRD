@@ -46,6 +46,8 @@ namespace PeliculasRD
             app.UseDeveloperExceptionPage();
             app.UseAuthentication();
             app.UseMvcWithDefaultRoute();
+            //The wait method in the end is beacause the method CreateAdminAccount is Task
+            AppIdentityDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
         }
     }
 }
