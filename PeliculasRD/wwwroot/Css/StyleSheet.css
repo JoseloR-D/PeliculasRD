@@ -18,17 +18,18 @@ header {
     font-family: 'Kavivanar', cursive;
     font-size: 28px;
     display: flex;
+    color: #fff;
 }
 
 header a {
     margin-left: 68%;
     margin-top: 2.5%;
-    color: #000;
+    color: #fff;
     font-family: 'Kavivanar', cursive;
 }
 
 header a:hover {
-    color: #fff;
+    color: #23395B;
 }
 
 header p {
@@ -51,7 +52,7 @@ form .submitButtom {
     border: none;
     border-radius: 3px;
     width: 100px;
-    color: #000;
+    color: #fff;
 }
 
 form .submitButtom:hover {
@@ -66,7 +67,7 @@ form .cancelButtom {
     border: none;
     border-radius: 3px;
     width: 100px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -88,12 +89,19 @@ form .validationDanger {
     border: none;
     border-radius: 3px;
     width: 100px;
-    color: #000;
+    color: #fff;
 }
 
 .createButtom:hover {
     opacity: .8;
     cursor: pointer;
+}
+
+.label {
+    background: #23395B;
+    width: 30%;
+    padding: 10px;
+    color: #fff;
 }
                             /*Footer*/
 footer {
@@ -106,4 +114,5 @@ footer {
     right: 0;
     bottom: 0;
     left: 0;
+    color: #fff;
 }

@@ -1,0 +1,57 @@
+﻿@model RoleEditModel
+
+@{ 
+    Layout = "_Layout";
+    ViewBag.Title = "Membershit of Users";
+}
+
+@* Entering *@
+
+<form method="post" asp-action="Edit">
+
+    <input type="hidden" name="roleName" value="@Model.Role.Name" />
+    <input type="hidden" name="roleId" value="@Model.Role.Id" />
+
+    <h3  class="createUserH3">Edit Roles of User</h3>
+    <div class="validationDanger" asp-validation-summary="All"></div>
+
+    <h5 class="label">Add Roles to Users</h5>
+    <table>
+        @if(Model.NoMembers.Count() == 0)
+        {
+            <tr><td colspan="2">All Users Are Members</td></tr>
+        }else { 
+            @foreach(AppUser user in Model.NoMembers)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>
+                        <input type="checkbox" name="IdsToAdd" value="@user.Id" />
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <h5 class="label">Removeto Roles from Users</h5>
+    <table>
+        @if(Model.Members.Count() == 0)
+        {
+            <tr><td colspan="2">No Users Are Members</td></tr>
+        }else { 
+            @foreach(AppUser user in Model.Members)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>
+                        <input type="checkbox" name="IdsToDelete" value="@user.Id" />
+                    </td>
+                </tr>
+
+            }
+        }
+    </table>
+
+    <button type="submit" class="submitButtom">Submit</button>
+    <a asp-action="Index" class="cancelButtom">Cancel</a>
+</form>
