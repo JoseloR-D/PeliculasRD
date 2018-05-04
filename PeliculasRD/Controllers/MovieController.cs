@@ -46,7 +46,7 @@ namespace PeliculasRD.Controllers
 
                 if(movie != null)
                 {
-                    return RedirectToAction("Movies");
+                    return RedirectToAction("Index", "Home");
                 } else
                 {
                     return NotFound();
