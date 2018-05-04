@@ -6,7 +6,7 @@
 }
 
 <div class="admin">
-    <h4>Movie @Model.Name</h4>
+    <h4>Movie: @Model.Name</h4>
     <div class="validationDanger" asp-validation-summary="ModelOnly"></div>
-    
+    <iframe src="@Model.MovieUrl" allow="autoplay"></iframe>
 </div>

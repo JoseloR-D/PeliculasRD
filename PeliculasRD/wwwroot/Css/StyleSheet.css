@@ -119,6 +119,12 @@ form .validationDanger {
 .rightButtom{
     margin-left: 68%;
 }
+
+iframe {
+    text-align: center;
+    width: 100%; 
+    height: 525px;
+}
                             /*Footer*/
 footer {
     background: #23395B;
