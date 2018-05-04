@@ -13,6 +13,8 @@ namespace PeliculasRD.Models
         [Required]
         public string Name { get; set; }
         [Required]
+        public string MovieUrl { get; set; }
+        [Required]
         public string Path { get; set; }
     }
 }
