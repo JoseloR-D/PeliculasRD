@@ -8,7 +8,7 @@ namespace PeliculasRD.Services.Interfaces
 {
     public interface IMovieRepository
     {
-        IQueryable<Movie> Movies { get; }
+        List<Movie> Movies();
         Task<Movie> Movie(int id);
         Task<Movie> Create(Movie movie);
         Task<Movie> Edit(Movie movie);

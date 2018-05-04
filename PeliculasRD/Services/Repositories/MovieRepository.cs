@@ -16,7 +16,7 @@ namespace PeliculasRD.Services.Repositories
             context = dbContext;
         }
 
-        public IQueryable<Movie> Movies => context.Movies;
+        public List<Movie> Movies() => context.Movies.ToList();
 
         public async Task<Movie> Movie(int id)
         {
