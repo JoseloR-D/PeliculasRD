@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PeliculasRD.Models;
+using PeliculasRD.Services.Interfaces;
+using PeliculasRD.Services.Repositories;
 
 namespace PeliculasRD
 {
@@ -26,6 +28,8 @@ namespace PeliculasRD
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            /*************Identity**************/
+
             //Pasandole al parametro options del AppIdentityDbContext
             services.AddDbContext<AppIdentityDbContext>(opts => {
                 opts.UseSqlServer(Configuration["Data:PeliculasRD:ConnectionString"]);
@@ -34,6 +38,13 @@ namespace PeliculasRD
             services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppIdentityDbContext>()
                 .AddDefaultTokenProviders();
+
+            /*************Movies**************/
+            services.AddDbContext<ApplicationDbContext>(opts => {
+                opts.UseSqlServer(Configuration["Data:PeliculasRDMovies:ConnectionString"]);
+            });
+
+            services.AddTransient<IMovieRepository, MovieRepository>();
 
             services.AddMvc();
         }
