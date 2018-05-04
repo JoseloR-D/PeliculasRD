@@ -48,9 +48,9 @@ namespace PeliculasRD
 
             services.AddTransient<IMovieRepository, MovieRepository>();
 
-            //Working with Img
-            services.AddSingleton<IFileProvider>(
-               new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Img")));
+            ////Working with Img
+            //services.AddSingleton<IFileProvider>(
+            //   new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Img")));
 
 
 

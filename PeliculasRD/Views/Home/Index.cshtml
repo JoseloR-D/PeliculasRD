@@ -1,27 +1,17 @@
-﻿@{
+﻿@model List<Movie>
+
+@{
     Layout = "_Layout";
-    ViewBag.Title = "Peliculas";
+    ViewBag.Title = "Movies";
 }
 
 <div class="peliculas">
-    <div class="pelicula">
-        <img src="~/Img/avengers.jpg">
-        <div class="nombrePelicula">Avengers</div>
-    </div>
-    <div class="pelicula">
-        <img src="~/Img/avengers.jpg">
-        <div class="nombrePelicula">Avengers</div>
-    </div>
-    <div class="pelicula">
-        <img src="~/Img/avengers.jpg">
-        <div class="nombrePelicula">Avengers</div>
-    </div>
-    <div class="pelicula">
-        <img src="~/Img/avengers.jpg">
-        <div class="nombrePelicula">Avengers</div>
-    </div>
-    <div class="pelicula">
-        <img src="~/Img/avengers.jpg">
-        <div class="nombrePelicula">Avengers</div>
-    </div>
+    @foreach (var movie in Model)
+    {
+
+        <div class="pelicula">
+            <img src="@movie.Path">
+            <div class="nombrePelicula">@movie.Name</div>
+        </div>
+    }
 </div>

@@ -21,10 +21,11 @@ namespace PeliculasRD.Controllers
             repository = movieRepository;
         }
 
-        [AllowAnonymous]
-        public ViewResult Index()
+        public ViewResult Movies()
         {
-            return View(repository.Movies());
+            var movies = repository.Movies();
+            movies.Reverse();
+            return View(movies);
         }
 
         [AllowAnonymous]
@@ -60,7 +61,7 @@ namespace PeliculasRD.Controllers
 
                     if(model != null)
                     {
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Movies");
                     } else
                     {
                         return NotFound();
@@ -116,7 +117,7 @@ namespace PeliculasRD.Controllers
             {
                 Movie movie = await repository.Delete(model);
                 if (movie != null)
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Movies");
                 else
                     return NotFound();
             }
