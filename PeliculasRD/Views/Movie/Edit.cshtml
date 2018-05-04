@@ -1,0 +1,28 @@
+﻿@model Movie
+
+@{ 
+    Layout = "_Layout";
+    ViewBag.Title = "Edit a Movie";
+}
+
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <h3 class="createUserH3">Edit Movie: @Model.Name</h3>
+    <div class="validationDanger" asp-validation-summary="All"></div>
+    <div class="create">
+        <div>
+            <label asp-for="Id"></label>
+            <input asp-for="Id" disabled class="disableDanger" />
+        </div>
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" />
+        </div>
+        <input name="path" type="hidden" value="@Model.Path" />
+        <div>
+            <label>Img</label>
+            <input type="file" name="file" />
+        </div>
+    </div>
+    <button type="submit" class="submitButtom">Edit</button>
+    <a asp-action="Index" class="cancelButtom">Cancel</a>
+</form>

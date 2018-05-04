@@ -87,21 +87,42 @@ namespace PeliculasRD.Controllers
                 return NotFound();
             }
         }
-
+        //Falta la imagen nueva
         [HttpPost]
-        public async Task<IActionResult> Edit(Movie model)
+        public async Task<IActionResult> Edit(Movie model, IFormFile file)
         {
             if (ModelState.IsValid)
             {
-                if(model != null)
+                if(file == null)
                 {
-                    Movie movie = await repository.Edit(model);
-                    return RedirectToAction("Index");
-                }
-                else
+                    if(model != null)
+                    {
+                        Movie movie = await repository.Edit(model);
+                        return RedirectToAction("Movies");
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                }else
                 {
-                    return NotFound();
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Img", file.FileName);
+                    using(var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    if(model != null)
+                    {
+                        model.Path = "/Img/" + file.FileName;
+                        Movie movie = await repository.Edit(model);
+                        return RedirectToAction("Movies");
+                    }else
+                    {
+                        return NotFound();
+                    }
                 }
+
             } else
             {
                 ModelState.AddModelError("", "Por favor llene los campos");
