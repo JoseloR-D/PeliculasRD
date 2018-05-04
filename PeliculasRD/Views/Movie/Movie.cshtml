@@ -1,0 +1,12 @@
+﻿@model Movie
+
+@{ 
+    Layout = "_Layout";
+    ViewBag.Title = "Viewing a Movie";
+}
+
+<div class="admin">
+    <h4>Movie @Model.Name</h4>
+    <div class="validationDanger" asp-validation-summary="ModelOnly"></div>
+    
+</div>

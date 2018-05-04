@@ -17,6 +17,10 @@
             <label asp-for="Name"></label>
             <input asp-for="Name" />
         </div>
+        <div>
+            <label asp-for="MovieUrl"></label>
+            <input asp-for="MovieUrl" />
+        </div>
         <input name="path" type="hidden" value="@Model.Path" />
         <div>
             <label>Img</label>
@@ -24,5 +28,5 @@
         </div>
     </div>
     <button type="submit" class="submitButtom">Edit</button>
-    <a asp-action="Index" class="cancelButtom">Cancel</a>
+    <a asp-action="Movies" class="cancelButtom">Cancel</a>
 </form>

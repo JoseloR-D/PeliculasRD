@@ -8,10 +8,11 @@
 <div class="peliculas">
     @foreach (var movie in Model)
     {
-
+    <a asp-action="Movie" asp-controller="Movie" asp-route-id="@movie.Id">
         <div class="pelicula">
             <img src="@movie.Path">
             <div class="nombrePelicula">@movie.Name</div>
         </div>
+    </a>
     }
 </div> 
