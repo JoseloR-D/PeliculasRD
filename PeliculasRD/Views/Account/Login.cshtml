@@ -5,25 +5,32 @@
     ViewBag.Title = "Log In";
 }
 
-<form method="post" asp-action="Login">
-    <h3 class="createUserH3">Log In</h3>
-    <div class="validationDanger" asp-validation-summary="All"></div>
-    <div class="create">
-        <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
-        <div>
-            <label asp-for="Email"></label>
-            <input asp-for="Email" />
+@if (!User.Identity.IsAuthenticated)
+{
+    <form method="post" asp-action="Login">
+        <h3 class="createUserH3">Log In</h3>
+        <div class="validationDanger" asp-validation-summary="All"></div>
+        <div class="create">
+            <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+            <div>
+                <label asp-for="Email"></label>
+                <input asp-for="Email" />
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" />
+            </div>
         </div>
-        <div>
-            <label asp-for="Password"></label>
-            <input asp-for="Password" />
-        </div>
-    </div>
 
-    <button type="submit" class="submitButtom">Log In</button>
-    <a asp-controller="Home" asp-action="Index" class="cancelButtom">Cancel</a>
-    <a asp-action="Create" asp-controller="Admin" class="createButtom rightButtom">Create an User</a>
-</form>
+        <button type="submit" class="submitButtom">Log In</button>
+        <a asp-controller="Home" asp-action="Index" class="cancelButtom">Cancel</a>
+        <a asp-action="Create" asp-controller="Admin" class="createButtom rightButtom">Create an User</a>
+    </form>
+} else
+{
+    <p>You are already in <a asp-action="Logout"> Logout ?</a></p>
+}
+
 
 
 
