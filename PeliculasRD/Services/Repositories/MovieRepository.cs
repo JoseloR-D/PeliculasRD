@@ -30,8 +30,9 @@ namespace PeliculasRD.Services.Repositories
 
         public async Task<Movie> Create(Movie model)
         {
-            context.Movies.Add(model);
+            var AddMovie = context.Movies.Add(model);
             await context.SaveChangesAsync();
+            model.Id = AddMovie.Entity.Id;
             return model;
         }
 

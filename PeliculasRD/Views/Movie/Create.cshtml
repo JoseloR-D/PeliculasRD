@@ -6,7 +6,7 @@
 }
 
 
-<form method="post" action="Create">
+<form method="post" action="Create" enctype="multipart/form-data">
     <h3 class="createUserH3">Create an User</h3>
     <div class="validationDanger" asp-validation-summary="All"></div>
     <div class="create">
@@ -14,14 +14,11 @@
             <label asp-for="Name"></label>
             <input asp-for="Name" />
         </div>
+        <input name="path" type="hidden" value="modelBinding"/>
         <div>
-            <label asp-for="Path"></label>
-            <input asp-for="Path" />
+            <label>Img</label>
+            <input type="file" name="file"/>
         </div>
-        @*<div>
-            <label asp-for="Password"></label>
-            <input asp-for="Password" />
-        </div>*@
     </div>
 
     <button type="submit" class="submitButtom">Submit</button>

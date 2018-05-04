@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using PeliculasRD.Models;
 using PeliculasRD.Services.Interfaces;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using System.IO;
+
 
 namespace PeliculasRD.Controllers
 {
@@ -19,7 +22,7 @@ namespace PeliculasRD.Controllers
         }
 
         [AllowAnonymous]
-        public ViewResult Movies()
+        public ViewResult Index()
         {
             return View(repository.Movies());
         }
@@ -38,18 +41,33 @@ namespace PeliculasRD.Controllers
         public ViewResult Create() => View();
 
         [HttpPost]
-        public async Task<IActionResult> Create(Movie movie)
+        public async Task<IActionResult> Create(Movie movie, IFormFile file)
         {
             if (ModelState.IsValid)
             {
-                Movie model = await repository.Create(movie);
-
-                if(movie != null)
+                if (file.Length != 0)
                 {
-                    return RedirectToAction("Index", "Home");
+
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Img",file.FileName);
+
+                    using(var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    movie.Path = "/Img/" + file.FileName;
+                    Movie model = await repository.Create(movie);
+
+                    if(model != null)
+                    {
+                        return RedirectToAction("Index");
+                    } else
+                    {
+                        return NotFound();
+                    }
                 } else
                 {
-                    return NotFound();
+                    ModelState.AddModelError("", "Please select an img");
                 }
             }
             ModelState.AddModelError("", "Por favor llene los campos");

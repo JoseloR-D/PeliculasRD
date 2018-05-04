@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using PeliculasRD.Models;
 using PeliculasRD.Services.Interfaces;
 using PeliculasRD.Services.Repositories;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace PeliculasRD
 {
@@ -45,6 +47,12 @@ namespace PeliculasRD
             });
 
             services.AddTransient<IMovieRepository, MovieRepository>();
+
+            //Working with Img
+            services.AddSingleton<IFileProvider>(
+               new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Img")));
+
+
 
             services.AddMvc();
         }
