@@ -115,6 +115,10 @@ form .validationDanger {
     margin-top: 10px;
     display: inline-block;
 }
+
+.rightButtom{
+    margin-left: 68%;
+}
                             /*Footer*/
 footer {
     background: #23395B;

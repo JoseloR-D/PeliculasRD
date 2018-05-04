@@ -23,9 +23,11 @@ namespace PeliculasRD.Controllers
 
         public ViewResult Index() => View(userManager.Users);
 
+        [AllowAnonymous]
         public ViewResult Create() => View();
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Create(CreateUser model)
         {
             if (ModelState.IsValid)

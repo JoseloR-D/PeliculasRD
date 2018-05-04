@@ -85,7 +85,6 @@ namespace PeliculasRD.Controllers
                 var users = await userManager.IsInRoleAsync(user, role.Name) ? members : noMembers;
                 users.Add(user);
             }
-
             return View(new RoleEditModel { Role = role, Members = members, NoMembers = noMembers });
         }
 
