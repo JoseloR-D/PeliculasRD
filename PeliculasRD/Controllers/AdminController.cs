@@ -80,7 +80,7 @@ namespace PeliculasRD.Controllers
 
         public async Task<IActionResult> Edit(string nameOut)
         {
-            if(User.Identity.Name == nameOut)
+            if(User.Identity.Name == nameOut || User.IsInRole("Admins"))
             {
                 AppUser user = await userManager.FindByNameAsync(nameOut);
                 if (user != null)

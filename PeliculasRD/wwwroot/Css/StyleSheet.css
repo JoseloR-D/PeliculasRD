@@ -151,5 +151,8 @@ footer {
     font-family: 'Kavivanar', cursive;
     font-size: 28px;
     text-align: center;
-    margin-top: 100%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
 }
