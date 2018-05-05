@@ -9,4 +9,12 @@
     <h4>Movie: @Model.Name</h4>
     <div class="validationDanger" asp-validation-summary="ModelOnly"></div>
     <iframe src="@Model.MovieUrl" allow="autoplay"></iframe>
+    @if (User.IsInRole("Admins"))
+    {
+        <form class="optiosForMovie" asp-action="Delete" asp-route-id="@Model.Id" method="post">
+            <a asp-action="Create" class="createButtom">Create a new Movie</a>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="editButtom">Edit</a>
+            <button type="submit" class="cancelButtom">Delete</button>
+        </form>
+    }
 </div>

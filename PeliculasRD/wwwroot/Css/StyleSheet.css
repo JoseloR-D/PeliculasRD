@@ -63,6 +63,10 @@ form {
     padding: 20px;
 }
 
+.optiosForMovie{
+    padding: 0;
+}
+
 form .submitButtom {
     background: #2978A0;
     padding: 10px;
@@ -101,6 +105,18 @@ form .validationDanger {
 
 .createButtom {
     text-decoration: none;
+    background: #23395B;
+    padding: 10px;
+    font-family: 'Kavivanar', cursive;
+    font-size: 25px;
+    border: none;
+    border-radius: 3px;
+    width: 100px;
+    color: #fff;
+}
+
+.editButtom {
+    text-decoration: none;
     background: #2978A0;
     padding: 10px;
     font-family: 'Kavivanar', cursive;
@@ -110,6 +126,19 @@ form .validationDanger {
     width: 100px;
     color: #fff;
 }
+
+.cancelButtom {
+    background: #9B1D20;
+    padding: 10px;
+    font-family: 'Kavivanar', cursive;
+    font-size: 25px;
+    border: none;
+    border-radius: 3px;
+    width: 100px;
+    color: #fff;
+    text-decoration: none;
+}
+
 
 .createButtom:hover {
     opacity: .8;
@@ -149,7 +178,7 @@ footer {
     background: #23395B;
     padding: 5px;
     font-family: 'Kavivanar', cursive;
-    font-size: 28px;
+    font-size: 15px;
     text-align: center;
     position: fixed;
     bottom: 0;
