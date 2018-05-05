@@ -13,13 +13,13 @@
 <body>
     <div>
         <header>
-            <a class="homeRedirection" asp-controller="Home">Peliculas RD</a>
+            <a class="homeRedirection" asp-controller="Home" asp-action="Index">Peliculas RD</a>
             @if (User.Identity.IsAuthenticated)
             {
                 <span class="hiUser">Hola @User.Identity.Name</span>
                 @if (User.IsInRole("Admins"))
                 {
-                    <a class="userInAndOut"><i class="fas fa-cog"></i></a>
+                    <a asp-action="Categories" asp-controller="Admin" class="userInAndOut"><i class="fas fa-cog"></i></a>
                 }else
                 {
                     <a asp-route-nameout="@User.Identity.Name" asp-action="Edit" asp-controller="Admin" class="userInAndOut"><i class="fas fa-cog"></i></a>

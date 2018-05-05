@@ -4,29 +4,36 @@
     padding: 20px;
     margin: 20px auto;
     border-radius: 3px;
-    padding: 20px;
     font-family: 'Kavivanar', cursive;
     font-size: 28px;
 }
 
-.peliculas {
+.categories {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.pelicula {
-    width: 20%;
+.categories a {
+    text-decoration: none;
 }
 
-img {
-    width: 75%;
+
+.categories .imagenes {
+    margin: 0 10px;
 }
 
-.nombrePelicula {
-    width: 75%;
+.categories .imagenes p{
     background: #000;
+    width: 100%;
     color: #fff;
-    text-align:center;
     margin-top: -13px;
+    padding: 5px;
+    text-align: center;
+}
+
+.categories .imagenes img {
+    width: 350px;
+    height: 300px;
 }

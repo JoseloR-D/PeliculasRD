@@ -1,0 +1,32 @@
+﻿@{ 
+    Layout = "_Layout";
+    ViewBag.Title = "Categories";
+}
+
+
+<div class="categories">
+    <div>
+        <a asp-action="Index">
+            <div class="imagenes">
+                <img src="~/Img/users.png" />
+                <p>Users<p>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a asp-controller="Movie" asp-action="Movies">
+            <div class="imagenes">
+                <img src="~/Img/movies.jpg" />
+                <p>Movies<p>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a asp-controller="RoleAdmin" asp-action="Index">
+            <div class="imagenes">
+                <img src="~/Img/roles.png" />
+                <p>Roles<p>
+            </div>
+        </a>
+    </div>
+</div>

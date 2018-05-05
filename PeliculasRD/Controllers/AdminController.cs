@@ -24,6 +24,9 @@ namespace PeliculasRD.Controllers
         [Authorize(Roles = "Admins")]
         public ViewResult Index() => View(userManager.Users);
 
+        [Authorize(Roles = "Admins")]
+        public ViewResult Categories() => View();
+
         [AllowAnonymous]
         public ViewResult Create() => View();
 
