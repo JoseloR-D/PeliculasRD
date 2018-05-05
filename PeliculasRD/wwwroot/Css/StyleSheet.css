@@ -46,13 +46,19 @@ header .userInAndOut:hover {
     border-bottom: 2px solid #fff;
 }
 
-header .homeRedirection:hover {
-    border-bottom: 2px solid #fff;
-}
-
 .hiUser{
     margin-left: 60%;
     color: #fff;
+}
+
+@keyframes turn {
+    0%{transform:rotate(10deg);}
+    0%{transform:rotate(50deg);}
+    0%{transform:rotate(100deg);}
+}
+
+.fa-cog:hover {
+    animation:turn 5s ease;
 }
 
                             /*Main*/
@@ -141,6 +147,11 @@ form .validationDanger {
 
 
 .createButtom:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.editButtom:hover {
     opacity: .8;
     cursor: pointer;
 }

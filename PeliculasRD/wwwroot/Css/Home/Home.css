@@ -38,7 +38,20 @@
     height: 300px;
 }
 
+.categories .movies {
+    margin-bottom: 15px;
+}
+
 .categories .movies img {
     width: 220px;
     height: 300px;
+}
+
+.categories .movies p {
+    background: #000;
+    width: 100%;
+    color: #fff;
+    margin-top: -13px;
+    padding: 5px;
+    text-align: center;
 }
