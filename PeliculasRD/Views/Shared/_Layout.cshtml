@@ -13,13 +13,22 @@
 <body>
     <div>
         <header>
-            <h1>Peliculas RD</h1>
+            <a class="homeRedirection" asp-controller="Home">Peliculas RD</a>
             @if (User.Identity.IsAuthenticated)
             {
-                <a asp-action="Logout" asp-controller="Account"><i class="fas fa-user"><p>Out</p></i></a>
+                <span class="hiUser">Hola @User.Identity.Name</span>
+                @if (User.IsInRole("Admins"))
+                {
+                    <a class="userInAndOut"><i class="fas fa-cog"></i></a>
+                }else
+                {
+                    <a asp-route-nameout="@User.Identity.Name" asp-action="Edit" asp-controller="Admin" class="userInAndOut"><i class="fas fa-cog"></i></a>
+                }
+
+                <a class="userInAndOut" asp-action="Logout" asp-controller="Account"><i class="fas fa-user"><p class="outUser">Out</p></i></a>
             } else
             {
-                <a asp-action="Login" asp-controller="Account"><i class="fas fa-user"><p> Log in</p></i></a>
+                <a class="userInAndOut" asp-action="Login" asp-controller="Account"><i class="fas fa-user"><p class="outUser"> Log in</p></i></a>
             }
         </header>
 

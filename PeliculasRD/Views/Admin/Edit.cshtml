@@ -32,6 +32,12 @@
     </div>
 
     <button type="submit" class="submitButtom">Edit</button>
-    <a asp-action="Index" class="cancelButtom">Cancel</a>
+    @if (User.IsInRole("Admins"))
+    {
+        <a asp-action="Index" class="cancelButtom">Cancel</a>
+    } else
+    {
+        <a asp-action="Index" asp-controller="Home" class="cancelButtom">Cancel</a>
+    }
 </form>
 }

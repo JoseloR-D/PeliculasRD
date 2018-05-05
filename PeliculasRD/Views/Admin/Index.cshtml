@@ -31,7 +31,7 @@
                     <td>@user.Email</td>
                     <td>
                         <form class="options" method="post" asp-action="Delete" asp-route-id="@user.Id">
-                            <a class="submitButtom" asp-action="Edit" asp-route-id="@user.Id">Edit</a>
+                            <a class="submitButtom" asp-action="Edit" asp-route-name="@user.UserName">Edit</a>
                             <button class="cancelButtom" type="submit">Delete </button>
                         </form>
                     </td>

@@ -18,24 +18,41 @@ header {
     font-family: 'Kavivanar', cursive;
     font-size: 28px;
     display: flex;
-    color: #fff;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: baseline;
 }
 
 header a {
-    margin-left: 68%;
-    margin-top: 2.5%;
     color: #fff;
-    font-family: 'Kavivanar', cursive;
-}
-
-header a:hover {
-    font-size: 29px;
+    text-decoration:none;
 }
 
 header p {
     font-family: 'Kavivanar', cursive;
     display: inline-block;
-    margin-left: 15px;
+}
+
+
+header .homeRedirection{
+    font-size: 40px;
+}
+
+header i .outUser{
+    margin-left: 10px;
+}
+
+header .userInAndOut:hover {
+    border-bottom: 2px solid #fff;
+}
+
+header .homeRedirection:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.hiUser{
+    margin-left: 60%;
+    color: #fff;
 }
 
                             /*Main*/
@@ -132,9 +149,5 @@ footer {
     font-family: 'Kavivanar', cursive;
     font-size: 28px;
     text-align: center;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    color: #fff;
+    margin-top: 100%;
 }

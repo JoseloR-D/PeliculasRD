@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PeliculasRD.Controllers
 {
-    [Authorize(Roles = "Admins")]
+    [Authorize]
     public class AdminController : Controller
     {
         UserManager<AppUser> userManager;
@@ -21,6 +21,7 @@ namespace PeliculasRD.Controllers
             passwordHasher = passHash;
         }
 
+        [Authorize(Roles = "Admins")]
         public ViewResult Index() => View(userManager.Users);
 
         [AllowAnonymous]
@@ -50,6 +51,7 @@ namespace PeliculasRD.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public async Task<IActionResult> Delete(string id)
         {
             AppUser user = await userManager.FindByIdAsync(id);
@@ -73,14 +75,19 @@ namespace PeliculasRD.Controllers
             return View("Index", userManager.Users);
         }
 
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(string nameOut)
         {
-            AppUser user = await userManager.FindByIdAsync(id);
-
-            if (user != null)
-                return View(user);
-            else
-                return RedirectToAction("Index");
+            if(User.Identity.Name == nameOut)
+            {
+                AppUser user = await userManager.FindByNameAsync(nameOut);
+                if (user != null)
+                    return View(user);
+                else
+                    return RedirectToAction("Index");
+            } else
+            {
+                return RedirectToAction("AccessDenied", "Account");
+            }
         }
 
         [HttpPost]
