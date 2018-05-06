@@ -190,6 +190,21 @@ iframe {
     display: inline-block;
 }
 
+.docu{
+    font-size: 42px;
+}
+
+.docuHeader {
+    font-size: 32px;
+    background: #23395B;
+    color: #fff;
+    padding: 10px;
+}
+
+.docuText {
+    font-size: 28px;
+}
+
 
                             /*Footer*/
 footer {

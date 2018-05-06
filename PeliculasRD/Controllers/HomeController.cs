@@ -22,6 +22,6 @@ namespace PeliculasRD.Controllers
             return View(movies);
         }
 
-        //public ViewResult Documentation() => View();
+        public ViewResult Documentation() => View();
     }
 }
