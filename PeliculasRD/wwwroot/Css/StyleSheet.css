@@ -226,3 +226,129 @@ footer {
     width: 100%;
     color: #fff;
 }
+
+
+
+/*Responsive Design*/
+
+@media screen and (max-width:1533px) {
+    .hiUser {
+        margin-left: 55%;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width:1465px) {
+    header {
+        padding: 1px 17%;
+        font-size: 20px;
+    }
+
+    .hiUser {
+        margin-left: 52%;
+        color: #fff;
+    }
+
+    header .homeRedirection {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width:1400px) {
+    header {
+        padding: 1px 24%;
+        font-size: 16px;
+    }
+
+    .hiUser {
+        margin-left: 52%;
+        color: #fff;
+    }
+
+    header .homeRedirection {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:1360px) {
+
+    header {
+        padding: 1px 23%;
+        font-size: 15px;
+    }
+
+    header .homeRedirection {
+        font-size: 15px;
+    }
+
+    .hiUser {
+        margin-left: 55%;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width:1319px) {
+    header .homeRedirection {
+        font-size: 29px;
+    }
+
+    .hiUser {
+        margin-left: 55%;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width:1166px) {
+    header .homeRedirection {
+        font-size: 29px;
+    }
+
+    .hiUser {
+        margin-left: 50%;
+        color: #fff;
+    }
+
+    header i .outUser {
+        margin-left: 8px;
+    }
+}
+
+@media screen and (max-width:1149px) {
+    header {
+        padding: 1px 18%;
+        font-size: 18px;
+    }
+
+        header .homeRedirection {
+            font-size: 18px;
+        }
+
+    .hiUser {
+        margin-left: 50%;
+        color: #fff;
+    }
+
+    header i .outUser {
+        margin-left: 8px;
+    }
+}
+
+@media screen and (max-width:1080px) {
+    header {
+        padding: 1px 27%;
+        font-size: 12px;
+    }
+
+        header .homeRedirection {
+            font-size: 18px;
+        }
+
+    .hiUser {
+        margin-left: 50%;
+        color: #fff;
+    }
+
+    header i .outUser {
+        margin-left: 8px;
+    }
+}

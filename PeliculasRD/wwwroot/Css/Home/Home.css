@@ -55,3 +55,21 @@
     padding: 5px;
     text-align: center;
 }
+
+@media screen and (max-width: 1465px) {
+    .main {
+        width: 67%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .main {
+        width: 53%;
+    }
+}
+
+@media screen and (max-width: 1360px){
+    .main {
+        width: 55%;
+    }
+}
