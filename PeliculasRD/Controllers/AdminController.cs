@@ -28,8 +28,18 @@ namespace PeliculasRD.Controllers
         public ViewResult Categories() => View();
 
         [AllowAnonymous]
-        public ViewResult Create() => View();
+        public IActionResult Create()
+        {
+            if (User.Identity.IsAuthenticated && User.IsInRole("Admins"))
+                return View();
+            else if (User.Identity.IsAuthenticated && User.IsInRole("Users"))
+                return RedirectToAction("AccessDenied", "Account");
+            else if (User.Identity.IsAuthenticated)
+                return RedirectToAction("AccessDenied", "Account");
+            return View();
+        }
 
+        //Docuemntacion.... Responsive Design    
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Create(CreateUser model)
@@ -70,12 +80,14 @@ namespace PeliculasRD.Controllers
                 {
                     AddErrorsFromResult(result);
                 }
+
             } else
             {
                 ModelState.AddModelError("", "User Not Found");
             }
             //Despues de guardar los errores ponmelos en la vista
             return View("Index", userManager.Users);
+
         }
 
         public async Task<IActionResult> Edit(string nameOut)

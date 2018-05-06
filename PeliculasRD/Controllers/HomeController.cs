@@ -21,5 +21,7 @@ namespace PeliculasRD.Controllers
             movies.Reverse();
             return View(movies);
         }
+
+        //public ViewResult Documentation() => View();
     }
 }
