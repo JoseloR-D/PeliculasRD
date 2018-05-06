@@ -73,3 +73,30 @@
         width: 55%;
     }
 }
+
+@media screen and (max-width: 1325px) {
+    .main {
+        width: 38%;
+    }
+    .categories .movies {
+        margin-bottom: 4px;
+    }
+}
+
+@media screen and (max-width: 1269px) {
+    .main {
+        width: 23%;
+    }
+
+    .categories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .categories .movies {
+        margin-bottom: 4px;
+    }
+}
+

@@ -287,68 +287,36 @@ footer {
     }
 }
 
-@media screen and (max-width:1319px) {
-    header .homeRedirection {
-        font-size: 29px;
-    }
-
-    .hiUser {
-        margin-left: 55%;
-        color: #fff;
-    }
-}
-
-@media screen and (max-width:1166px) {
-    header .homeRedirection {
-        font-size: 29px;
-    }
-
-    .hiUser {
-        margin-left: 50%;
-        color: #fff;
-    }
-
-    header i .outUser {
-        margin-left: 8px;
-    }
-}
-
-@media screen and (max-width:1149px) {
+@media screen and (max-width:1325px) {
     header {
-        padding: 1px 18%;
-        font-size: 18px;
+        padding: 1px 31.5%;
+        font-size: 10px;
     }
-
-        header .homeRedirection {
-            font-size: 18px;
-        }
 
     .hiUser {
-        margin-left: 50%;
+        margin-left: 45%;
         color: #fff;
+        font-size: 14px;
     }
 
-    header i .outUser {
-        margin-left: 8px;
+    header .homeRedirection {
+        font-size: 15px;
     }
 }
 
-@media screen and (max-width:1080px) {
+@media screen and (max-width:1269px) {
     header {
-        padding: 1px 27%;
-        font-size: 12px;
+        padding: 1px 39%;
+        font-size: 7px;
     }
-
-        header .homeRedirection {
-            font-size: 18px;
-        }
 
     .hiUser {
-        margin-left: 50%;
+        margin-left: 28%;
         color: #fff;
+        font-size: 10px;
     }
 
-    header i .outUser {
-        margin-left: 8px;
+    header .homeRedirection {
+        font-size: 11px;
     }
 }
