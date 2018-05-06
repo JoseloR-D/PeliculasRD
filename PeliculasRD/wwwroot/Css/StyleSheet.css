@@ -16,7 +16,7 @@ header {
     background: #23395B;
     padding: 1px 10%;
     font-family: 'Kavivanar', cursive;
-    font-size: 28px;
+    font-size: 22px;
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -39,7 +39,7 @@ header .homeRedirection{
 }
 
 header i .outUser{
-    margin-left: 10px;
+    margin-left: 13px;
 }
 
 header .userInAndOut:hover {
@@ -59,6 +59,14 @@ header .userInAndOut:hover {
 
 .fa-cog:hover {
     animation:turn 5s ease;
+}
+
+.docoIcon {
+    margin-left: 10px;
+}
+
+.inIcon{
+    margin-left: 930px;
 }
 
                             /*Main*/

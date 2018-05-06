@@ -13,7 +13,7 @@
 <body>
     <div>
         <header>
-            <a class="homeRedirection" asp-controller="Home" asp-action="Index">Peliculas RD</a>
+            <a class="homeRedirection" title="Peliculas" asp-controller="Home" asp-action="Index">Peliculas RD</a>
             @if (User.Identity.IsAuthenticated)
             {
                 <span class="hiUser">Hola @User.Identity.Name</span>
@@ -22,15 +22,15 @@
                     <a asp-action="Categories" asp-controller="Admin" class="userInAndOut"><i class="fas fa-cog"></i></a>
                 }else
                 {
-                    <a asp-route-nameout="@User.Identity.Name" asp-action="Edit" asp-controller="Admin" class="userInAndOut"><i class="fas fa-cog"></i></a>
+                    <a title="Configuracion" asp-route-nameout="@User.Identity.Name" asp-action="Edit" asp-controller="Admin" class="userInAndOut"><i class="fas fa-cog"></i></a>
                 }
 
-                <a class="userInAndOut" asp-action="Logout" asp-controller="Account"><i class="fas fa-user"><p class="outUser">Out</p></i></a>
+                <a class="userInAndOut" title="Salir" asp-action="Logout" asp-controller="Account"><i class="fas fa-user"><p class="outUser">Log Out</p></i></a>
             } else
             {
-                <a class="userInAndOut" asp-action="Login" asp-controller="Account"><i class="fas fa-user"><p class="outUser"> Log in</p></i></a>
+                <a class="userInAndOut inIcon" asp-action="Login" asp-controller="Account"><i class="fas fa-user"><p class="outUser">Log in</p></i></a>
             }
-            <a class="userInAndOut" asp-action="Documentation" asp-controller="Home"><i class="fas fa-book"></i><p class="outUser"></p></i></a>
+            <a class="userInAndOut docoIcon" title="Documentation" asp-action="Documentation" asp-controller="Home"><i class="fas fa-book"></i><p class="outUser"></p></i></a>
         </header>
 
         <div class="main">
