@@ -32,7 +32,6 @@ namespace PeliculasRD
         {
             /*************Identity**************/
 
-            //Pasandole al parametro options del AppIdentityDbContext
             services.AddDbContext<AppIdentityDbContext>(opts => {
                 opts.UseSqlServer(Configuration["Data:PeliculasRD:ConnectionString"]);
             });
@@ -48,12 +47,6 @@ namespace PeliculasRD
 
             services.AddTransient<IMovieRepository, MovieRepository>();
 
-            ////Working with Img
-            //services.AddSingleton<IFileProvider>(
-            //   new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Img")));
-
-
-
             services.AddMvc();
         }
 
@@ -67,6 +60,7 @@ namespace PeliculasRD
             app.UseMvcWithDefaultRoute();
             //The wait method in the end is beacause the method CreateAdminAccount is Task
             AppIdentityDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
+            SeedMovieData.SeedMovies(app, Configuration).Wait();
         }
     }
 }
